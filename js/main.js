@@ -9,6 +9,29 @@ const submitButton = document.getElementById("submit");
 function quizBuilder() {
   // This variable will store the HTML output.
   const output = [];
+
+  //For every question.
+  theQuestions.forEach(currentQuestion, questionID) => {
+
+    // This variable will store the list of choices for the answer.
+    const choices = [];
+// For every available answer:
+    for(letter in currentQuestion.choices){
+      // Creates an HTML radio button.
+      choices.push(`<label>
+      <input type="radio" name="question${questionID}" value="$(letter)"></input>
+    $(letter) :
+    ${currentQuestion.choices[letter]}4
+    </label>`
+      );
+}
+// The code below will push the answer to the output.
+output.push(`<div class="question"> ${currentQuestion.question} </div>
+<div class="choices"> ${choices.join('')} </div>`
+);
+}
+};
+quizStorer.innerHTML = output.join('');
 }
 
 function displayAnswers() {}
@@ -26,7 +49,7 @@ const theQuestions = [
       C: "Mike Myers",
       D: "George Lazenby",
     },
-    rightChoice: "D",
+    rightChoice: "D"
   },
   {
     question: "Which album of Lou Reed contains the song Perfect Day?",
@@ -36,7 +59,7 @@ const theQuestions = [
       C: "Coney Island Baby",
       D: "New York",
     },
-    rightChoice: "A",
+    rightChoice: "A"
   },
   {
     question: "Which of these anime is about Sensha-dō, a sport with tanks?",
@@ -46,7 +69,7 @@ const theQuestions = [
       C: "Upotte!!",
       D: "Neon Genesis Evangelion",
     },
-    rightChoice: "A",
+    rightChoice: "A"
   },
   {
     question:
@@ -57,7 +80,7 @@ const theQuestions = [
       C: "James Cypher",
       D: "Bill Cipher",
     },
-    rightChoice: "C",
+    rightChoice: "C"
   },
   {
     question:
@@ -68,7 +91,7 @@ const theQuestions = [
       C: "HADRIS",
       D: "TARDIS",
     },
-    rightChoice: "D",
+    rightChoice: "D"
   },
   {
     question: "Who wrote the book titled 1984?",
@@ -78,6 +101,6 @@ const theQuestions = [
       C: "J.R.R. Tolkien",
       D: "G.R.R. Martin",
     },
-    rightChoice: "B",
-  },
+    rightChoice: "B"
+  }
 ];
