@@ -1,3 +1,3 @@
 # js-quiz
 
-A little personality quiz of sorts made made with JavaScript (front-end only).
+A little quiz of sorts about pop culture made made with JavaScript (front-end only, so cheating is possible).
